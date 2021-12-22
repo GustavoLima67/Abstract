@@ -9,13 +9,13 @@ package entities;
  *
  * @author Gustavo
  */
-public abstract class TaxPlayer {
+public abstract class TaxPayer {
     private String name;
     private Double anualIncome;
     
-    public TaxPlayer(){
+    public TaxPayer(){
     }
-    public TaxPlayer(String name,Double anualIncome){
+    public TaxPayer(String name,Double anualIncome){
         this.name = name;
         this.anualIncome = anualIncome;       
     }
@@ -31,10 +31,6 @@ public abstract class TaxPlayer {
     public void setAnualIncome(Double anualIncome){
         this.anualIncome = anualIncome;
     }
-    public abstract Double tax();
-    
-    public void processing(Double percentage){
-
-    }
+    public abstract double tax();
     
 }

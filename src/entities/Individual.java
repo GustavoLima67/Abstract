@@ -9,7 +9,7 @@ package entities;
  *
  * @author Gustavo
  */
-public class Individual extends TaxPlayer {
+public class Individual extends TaxPayer {
 
     private Double healthExpreditures;
     
@@ -24,9 +24,10 @@ public class Individual extends TaxPlayer {
         return healthExpreditures;
     }
     @Override
-    public Double tax() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public double tax() {
+        return getAnualIncome() * healthExpreditures / 100.0;
     }
+    @Override
     public String toString(){
         return getName()+": $ ";
     }

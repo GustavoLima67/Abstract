@@ -7,7 +7,7 @@ package application;
 
 import entities.Company;
 import entities.Individual;
-import entities.TaxPlayer;
+import entities.TaxPayer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -21,7 +21,7 @@ public class Program {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        List<TaxPlayer> list = new ArrayList<>();
+        List<TaxPayer> list = new ArrayList<>();
         System.out.print("Enter the number of tax payers: ");
         int payers = sc.nextInt();
         for(int i=1;i<=payers;i++){
@@ -36,9 +36,9 @@ public class Program {
                 double anualIncome = sc.nextDouble();
                 System.out.print("Health expenditures: ");
                 double healthExpemditures = sc.nextDouble();
-                list.add(new TaxPlayer(name, anualIncome) {
+                list.add(new TaxPayer(name, anualIncome) {
                     @Override
-                    public Double tax() {
+                    public double tax() {
                         throw new UnsupportedOperationException("Not supported yet."); 
                     }
                 });

@@ -9,7 +9,7 @@ package entities;
  *
  * @author Gustavo
  */
-public class Company extends TaxPlayer {
+public class Company extends TaxPayer {
 
     private Integer numberOfEmployees;
     
@@ -27,8 +27,8 @@ public class Company extends TaxPlayer {
         this.numberOfEmployees = numberOfEmployees;
     }
     @Override
-    public Double tax() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public double tax() {
+        return 0;
     }
     
 }
