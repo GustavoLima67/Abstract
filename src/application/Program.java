@@ -36,8 +36,8 @@ public class Program {
             double anualIncome = sc.nextDouble();
             if(ch == 'i'){
                 System.out.print("Health expenditures: ");
-                double healthExpemditures = sc.nextDouble();
-                list.add(new Individual(name, anualIncome, healthExpemditures));
+                double healthExpenditures = sc.nextDouble();
+                list.add(new Individual(name, anualIncome, healthExpenditures));
             }else{
                 System.out.print("Number of employees: ");
                 int numberOfEmployees = sc.nextInt();
@@ -47,12 +47,13 @@ public class Program {
         System.out.println();
         System.out.println("TAXES PAIND: ");
         for(TaxPayer tp : list){
-            System.out.println(tp.getName() + ": $ " + String.format("%.2f%n",tp.tax()));
+            System.out.println(tp.getName() + ": $ " + String.format("%.2f",tp.tax()));
         }
         double sum = 0.0;
         for(TaxPayer tp : list){
             sum += tp.tax();
         }
+        System.out.println();
         System.out.println("TOTAL TAXES: $ "+String.format("%.2f",sum));
     }
 }
