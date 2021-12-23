@@ -25,11 +25,17 @@ public class Individual extends TaxPayer {
     }
     @Override
     public double tax() {
-        return getAnualIncome() * healthExpreditures / 100.0;
+        double basicTax = 0.0;
+        if(getAnualIncome() < 20000.00){
+            basicTax -= getAnualIncome() * 0.15;
+        }else{
+            basicTax -= getAnualIncome() * 0.25;
+        }
+        basicTax -= getHealthExpreditures() * 0.5;
+        if(basicTax < 0.0){
+            return 0.0;
+        }else{
+            return basicTax;
+        }
     }
-    @Override
-    public String toString(){
-        return getName()+": $ ";
-    }
-    
 }
